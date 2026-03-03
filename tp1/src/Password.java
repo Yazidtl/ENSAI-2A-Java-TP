@@ -71,25 +71,56 @@ public class Password {
      */
     public static boolean isStrongPassword(String password) {
 
-        // Code here
 
-        return false;
+        // Vérifie la longueur minimum
+        if (password.length() < 12) {
+            return false;
+        }
+
+        boolean hasUpper = false;
+        boolean hasLower = false;
+        boolean hasDigit = false;
+
+        for (char c : password.toCharArray()) {
+
+            if (Character.isWhitespace(c)) {
+                return false;
+            }
+
+            if (Character.isUpperCase(c)) {
+                hasUpper = true;
+            }
+
+            if (Character.isLowerCase(c)) {
+                hasLower = true;
+            }
+
+            if (Character.isDigit(c)) {
+                hasDigit = true;
+            }
+        }
+
+        // Retourne true seulement si toutes les conditions sont remplies
+        return hasUpper && hasLower && hasDigit;
     }
 
-    /**
-     * Checks the strength of multiple passwords and stores the results in a
-     * HashMap.
-     *
-     * @param passwords An ArrayList of passwords to be checked.
-     * @return A HashMap where each password is mapped to a Boolean value:
-     *         true if the password is strong, false otherwise
-     */
-    public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) {
+            return false;
+        }
 
-        // Code here
+        /**
+         * Checks the strength of multiple passwords and stores the results in a
+         * HashMap.
+         *
+         * @param passwords An ArrayList of passwords to be checked.
+         * @return A HashMap where each password is mapped to a Boolean value:
+         *         true if the password is strong, false otherwise
+         */
+        public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) {
 
-        return null;
-    }
+            // Code here
+
+            return null;
+        }
 
     /**
      * Generates a secure random password with at least:
