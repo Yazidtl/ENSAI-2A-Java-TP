@@ -44,14 +44,12 @@ public class Password {
 
             String number = String.format("%06d", i);
 
-            String hashed = hashPassword(number);
 
-            if (hashed.equals(targetHash)) {
+            if (hashPassword(number).equals(targetHash)) {
                 return number;
             }
         }
 
-    // Aucun résultat trouvé
         return null;
     }
 
