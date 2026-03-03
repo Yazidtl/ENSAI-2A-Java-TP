@@ -40,8 +40,18 @@ public class Password {
      */
     public static String bruteForce6Digit(String targetHash) {
 
-        // Code here
+        for (int i = 0; i <= 999999; i++) {
 
+            String number = String.format("%06d", i);
+
+            String hashed = hashPassword(number);
+
+            if (hashed.equals(targetHash)) {
+                return number;
+            }
+        }
+
+    // Aucun résultat trouvé
         return null;
     }
 
