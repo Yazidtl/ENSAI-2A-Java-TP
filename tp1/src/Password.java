@@ -75,35 +75,14 @@ public class Password {
             return false;
         }
 
-        boolean hasUpper = false;
-        boolean hasLower = false;
-        boolean hasDigit = false;
+        boolean isLongEnougth = password.length() >= 12;
+        boolean containLower = false;
+        boolean containUpper = false;
+        boolean containDigit = false;
+        boolean containSpace = false;
 
-        for (char c : password.toCharArray()) {
-
-            if (Character.isWhitespace(c)) {
-                return false;
-            }
-
-            if (Character.isUpperCase(c)) {
-                hasUpper = true;
-            }
-
-            if (Character.isLowerCase(c)) {
-                hasLower = true;
-            }
-
-            if (Character.isDigit(c)) {
-                hasDigit = true;
-            }
-        }
-
-        // Retourne true seulement si toutes les conditions sont remplies
-        return hasUpper && hasLower && hasDigit;
+        return containLower && containUpper && containDigit && containSpace;
     }
-
-            return false;
-        }
 
         /**
          * Checks the strength of multiple passwords and stores the results in a
