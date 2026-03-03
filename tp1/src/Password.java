@@ -81,7 +81,16 @@ public class Password {
         boolean containDigit = false;
         boolean containSpace = false;
 
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+            if (Character.isUpperCase(c))
+                containUpper = true;
+            if (Character.isLowerCase(c))
+                containLower = true;           
+        }
+
         return containLower && containUpper && containDigit && containSpace;
+    
     }
 
         /**
