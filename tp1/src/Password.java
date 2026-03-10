@@ -40,15 +40,7 @@ public class Password {
      */
     public static String bruteForce6Digit(String targetHash) {
 
-        for (int i = 0; i <= 999999; i++) {
-
-            String number = String.format("%06d", i);
-
-
-            if (hashPassword(number).equals(targetHash)) {
-                return number;
-            }
-        }
+        // Code here
 
         return null;
     }
@@ -69,44 +61,25 @@ public class Password {
      */
     public static boolean isStrongPassword(String password) {
 
+        // Code here
 
-        // Vérifie la longueur minimum
-        if (password.length() < 12) {
-            return false;
-        }
-
-        boolean isLongEnougth = password.length() >= 12;
-        boolean containLower = false;
-        boolean containUpper = false;
-        boolean containDigit = false;
-        boolean containSpace = false;
-
-        for (int i = 0; i < password.length(); i++) {
-            char c = password.charAt(i);
-            if (Character.isUpperCase(c))
-                containUpper = true;
-            if (Character.isLowerCase(c))
-                containLower = true;           
-        }
-
-        return containLower && containUpper && containDigit && containSpace;
-    
+        return false;
     }
 
-        /**
-         * Checks the strength of multiple passwords and stores the results in a
-         * HashMap.
-         *
-         * @param passwords An ArrayList of passwords to be checked.
-         * @return A HashMap where each password is mapped to a Boolean value:
-         *         true if the password is strong, false otherwise
-         */
-        public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) {
+    /**
+     * Checks the strength of multiple passwords and stores the results in a
+     * HashMap.
+     *
+     * @param passwords An ArrayList of passwords to be checked.
+     * @return A HashMap where each password is mapped to a Boolean value:
+     *         true if the password is strong, false otherwise
+     */
+    public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) {
 
-            // Code here
+        // Code here
 
-            return null;
-        }
+        return null;
+    }
 
     /**
      * Generates a secure random password with at least:
